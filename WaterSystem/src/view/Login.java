@@ -11,7 +11,7 @@ import javax.swing.*;
 import javax.swing.GroupLayout;
 
 /**
- * @author unknown
+ * @author 李有彩
  */
 public class Login extends JFrame {
     public Login() {
