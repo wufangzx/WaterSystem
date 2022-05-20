@@ -10,30 +10,39 @@ import java.util.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
+
 /**
- * @author 李有彩
+ * @author
  */
-public class Login extends JFrame {
+public class Login extends JFrame  {
+
+    public static void main(String[] args) {
+        //Main函数，创建一个Login界面
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    Login frame = new Login();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+//Login构造函数
     public Login() {
         initComponents();
     }
-
-    private void ResetButtonMouseClicked(MouseEvent e) {
-        // TODO add your code here
+/*
+重置按钮事件函数，将用户名text,密码text内容设置为空字符，用户类型设置为第一项
+*/
+    private void ResetValue(ActionEvent e)
+    {
         UserNameTextField.setText("");
-        PassWordTextField.setText("");
+        passwordField.setText("");
         UserTypeComboBox.setSelectedIndex(0);
 
     }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -44,11 +53,11 @@ public class Login extends JFrame {
         label2 = new JLabel();
         label3 = new JLabel();
         UserNameTextField = new JTextField();
-        PassWordTextField = new JTextField();
         Loginbutton = new JButton();
         ResetButton = new JButton();
         UserTypeComboBox = new JComboBox<>();
         label4 = new JLabel();
+        passwordField = new JPasswordField();
 
         //======== this ========
         setIconImage(null);
@@ -77,11 +86,11 @@ public class Login extends JFrame {
 
         //---- ResetButton ----
         ResetButton.setText(bundle.getString("Login.ResetButton.text"));
-        ResetButton.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                ResetButtonMouseClicked(e);
 
+        ResetButton.addActionListener(new ActionListener() {
+            //重置按钮点击事件
+            public void actionPerformed(ActionEvent ae) {
+                ResetValue(ae);
             }
         });
 
@@ -120,7 +129,7 @@ public class Login extends JFrame {
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                                         .addComponent(UserTypeComboBox, GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
-                                        .addComponent(PassWordTextField)))))
+                                        .addComponent(passwordField, GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)))))
                         .addGroup(contentPaneLayout.createSequentialGroup()
                             .addGap(106, 106, 106)
                             .addComponent(Loginbutton)
@@ -140,12 +149,12 @@ public class Login extends JFrame {
                     .addGap(26, 26, 26)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(label2)
-                        .addComponent(PassWordTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                        .addComponent(passwordField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(UserTypeComboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                         .addComponent(label4))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(Loginbutton, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
                         .addComponent(ResetButton, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))
@@ -159,15 +168,16 @@ public class Login extends JFrame {
 
 
 
+
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     private JLabel label1;
     private JLabel label2;
     private JLabel label3;
     private JTextField UserNameTextField;
-    private JTextField PassWordTextField;
     private JButton Loginbutton;
     private JButton ResetButton;
     private JComboBox<String> UserTypeComboBox;
     private JLabel label4;
+    private JPasswordField passwordField;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
