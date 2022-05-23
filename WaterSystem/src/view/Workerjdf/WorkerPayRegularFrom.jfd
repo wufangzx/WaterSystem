@@ -1,0 +1,27 @@
+JFDML JFormDesigner: "7.0.5.1.409" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:61:p, comp label1:::p::p, space ::587:x}, seq t {space ::111:x, comp label2:::p::p, space :p:117:p}}"
+			"$verticalGroup": "par l {seq l {space :p:43:p, comp label1:::p::p, space :p:40:p, comp label2:::p::p, space ::245:x}}"
+		} ) {
+			name: "this"
+			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/images/收费规则.png" )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "缴费规则："
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 8, false )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "卧槽！你这水分子是金子做的，还是水原子是金子做的？"
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 9, false )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 85 )
+			"size": new java.awt.Dimension( 750, 415 )
+		} )
+	}
+}

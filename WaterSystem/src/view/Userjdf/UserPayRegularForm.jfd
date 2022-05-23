@@ -1,0 +1,27 @@
+JFDML JFormDesigner: "7.0.5.1.409" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq {space :p:43:p, comp label1:::p::p}, seq l {space :p:96:p, comp label2:::p::p}}, space ::123:x}}"
+			"$verticalGroup": "par l {seq l {space :p:39:p, comp label1:::p::p, space :p:26:p, comp label2:::p::p, space ::141:x}}"
+		} ) {
+			name: "this"
+			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/images/缴费.png" )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "缴费规则："
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 9, false )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "水费两块钱一斤"
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 14, false )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 135, 100 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}

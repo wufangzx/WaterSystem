@@ -1,0 +1,27 @@
+JFDML JFormDesigner: "7.0.5.1.409" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq {space :p:114:p, comp label1:::p::p}, seq l {space :p:17:p, comp label2:::p:116:p}}, space ::130:x}}"
+			"$verticalGroup": "par l {seq l {space :::p, comp label2:::p::p, space :p:74:p, comp label1:::p::p, space ::137:x}}"
+		} ) {
+			name: "this"
+			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/images/投诉热线.png" )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "你投诉你妈呢"
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 14, false )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "投诉热线："
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 6, false )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 75, 85 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}
