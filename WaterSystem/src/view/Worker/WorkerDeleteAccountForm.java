@@ -1,5 +1,5 @@
 /*
- * Created by JFormDesigner on Mon May 23 20:04:15 CST 2022
+ * Created by JFormDesigner on Mon May 23 19:41:05 CST 2022
  */
 
 package view.Worker;
@@ -10,8 +10,8 @@ import javax.swing.GroupLayout;
 /**
  * @author zengxing
  */
-public class WorkerTipForm extends JFrame {
-    public WorkerTipForm() {
+public class WorkerDeleteAccountForm extends JFrame {
+    public WorkerDeleteAccountForm() {
         initComponents();
     }
 
@@ -24,23 +24,23 @@ public class WorkerTipForm extends JFrame {
         var contentPane = getContentPane();
 
         //---- label1 ----
-        label1.setText("\u901a\u77e5");
+        label1.setText("\u6ce8\u9500\u8d26\u53f7");
 
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
             contentPaneLayout.createParallelGroup()
                 .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addGap(99, 99, 99)
+                    .addGap(94, 94, 94)
                     .addComponent(label1)
-                    .addContainerGap(276, Short.MAX_VALUE))
+                    .addContainerGap(281, Short.MAX_VALUE))
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
                 .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addGap(62, 62, 62)
+                    .addGap(40, 40, 40)
                     .addComponent(label1)
-                    .addContainerGap(189, Short.MAX_VALUE))
+                    .addContainerGap(211, Short.MAX_VALUE))
         );
         pack();
         setLocationRelativeTo(getOwner());

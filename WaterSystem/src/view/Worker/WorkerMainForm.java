@@ -7,8 +7,6 @@ package view.Worker;
 import java.awt.*;
 import java.awt.event.*;
 import model.UserType;
-import view.Worker.WorkerPayRegularFrom;
-import view.Worker.WorkerTipForm;
 
 import javax.swing.*;
 import javax.swing.GroupLayout;
@@ -32,13 +30,45 @@ public class WorkerMainForm extends JFrame {
 
     private void WorkerPayMouseClicked(MouseEvent e) {
         // TODO add your code here
+        //弹出缴费规则页面
         new WorkerPayRegularFrom().setVisible(true);
     }
 
     private void WorkerTipMouseClicked(MouseEvent e) {
         // TODO add your code here
+        //弹出通知页面
         new WorkerTipForm().setVisible(true);
     }
+
+
+
+    private void ChangInformationMouseClicked(MouseEvent e) {
+        //弹出修改客户信息页面
+        new WorkerChangInformationForm().setVisible(true);
+        // TODO add your code here
+    }
+
+    private void menu10MouseClicked(MouseEvent e) {
+        // TODO add your code here
+        //弹出注册账户页面
+        new WorkerNewAccountForm().setVisible(true);
+    }
+
+    private void menu5MouseClicked(MouseEvent e) {
+        // TODO add your code here
+        //弹出收费页面
+        new WorkerChargeFeeForm().setVisible(true);
+    }
+
+    private void menu4MouseClicked(MouseEvent e) {
+        // TODO add your code here
+        //弹出注销账户页面
+        new WorkerDeleteAccountForm().setVisible(true);
+    }
+
+
+
+
 
 
     private void initComponents() {
@@ -69,6 +99,7 @@ public class WorkerMainForm extends JFrame {
         button3 = new JButton();
 
         //======== this ========
+        setIconImage(null);
         var contentPane = getContentPane();
 
         //======== menuBar1 ========
@@ -94,6 +125,14 @@ public class WorkerMainForm extends JFrame {
                     menu3.setText("\u5ba2\u6237\u4fe1\u606f\u66f4\u6539");
                     menu3.setIcon(new ImageIcon(getClass().getResource("/images/\u7528\u6237\u4fe1\u606f\u66f4\u6539.png")));
                     menu3.setFont(menu3.getFont().deriveFont(menu3.getFont().getSize() + 1f));
+                    menu3.addMouseListener(new MouseAdapter() {
+                        @Override
+                        public void mouseClicked(MouseEvent e) {
+                            ChangInformationMouseClicked(e);
+                        }
+                    });
+
+
                 }
                 menu1.add(menu3);
 
@@ -101,6 +140,12 @@ public class WorkerMainForm extends JFrame {
                 {
                     menu10.setText("\u6ce8\u518c\u8d26\u53f7");
                     menu10.setIcon(new ImageIcon(getClass().getResource("/images/\u6ce8\u518c\u8d26\u53f7.png")));
+                    menu10.addMouseListener(new MouseAdapter() {
+                        @Override
+                        public void mouseClicked(MouseEvent e) {
+                            menu10MouseClicked(e);
+                        }
+                    });
                 }
                 menu1.add(menu10);
 
@@ -109,14 +154,26 @@ public class WorkerMainForm extends JFrame {
                     menu4.setText("\u6ce8\u9500\u7528\u6237\u8d26\u6237");
                     menu4.setSelectedIcon(null);
                     menu4.setIcon(new ImageIcon(getClass().getResource("/images/\u6ce8\u9500\u7528\u6237.png")));
+                    menu4.addMouseListener(new MouseAdapter() {
+                        @Override
+                        public void mouseClicked(MouseEvent e) {
+                            menu4MouseClicked(e);
+                        }
+                    });
                 }
                 menu1.add(menu4);
 
                 //======== menu5 ========
                 {
                     menu5.setText("\u6536\u8d39\u5904\u7406");
-                    menu5.setSelectedIcon(new ImageIcon(getClass().getResource("/images/\u6536\u8d39\u5904\u7406.png")));
-                    menu5.setIcon(new ImageIcon(getClass().getResource("/images/\u6536\u8d39\u5904\u7406.png")));
+
+                    menu5.setIcon(new ImageIcon(getClass().getResource("/images/\u6536\u8d39 .png")));
+                    menu5.addMouseListener(new MouseAdapter() {
+                        @Override
+                        public void mouseClicked(MouseEvent e) {
+                            menu5MouseClicked(e);
+                        }
+                    });
                 }
                 menu1.add(menu5);
             }

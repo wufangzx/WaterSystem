@@ -4,19 +4,17 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :p:56:p, comp label1:::p::p, space ::434:x}}"
-			"$verticalGroup": "par l {seq l {space :p:49:p, comp label1:::p::p, space ::352:x}}"
+			"$horizontalGroup": "par l {seq l {space :p:126:p, comp label1:::p::p, space ::249:x}}"
+			"$verticalGroup": "par l {seq l {space :p:42:p, comp label1:::p::p, space ::209:x}}"
 		} ) {
 			name: "this"
-			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/images/通知.png" )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label1"
-				"text": "业务员通知："
-				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+				"text": "text"
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 515, 450 )
+			"size": new java.awt.Dimension( 400, 300 )
 		} )
 	}
 }

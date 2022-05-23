@@ -7,6 +7,7 @@ package view.User;
 import java.awt.*;
 import java.awt.event.*;
 import model.UserType;
+import view.User.*;
 
 import javax.swing.*;
 import javax.swing.GroupLayout;
@@ -31,38 +32,43 @@ public class UserMainForm extends JFrame {
 
     private void UserHotLineMouseClicked(MouseEvent e) {
         // TODO add your code here
+        //弹出投诉热线页面
         new UserHotLineForm().setVisible(true);
     }
 
-    private void UserPayMouseClicked(MouseEvent e) {
-        // TODO add your code here
-        new UserPayRegularForm().setVisible(true);
-    }
+
 
     private void UserWaterTpyeMouseClicked(MouseEvent e) {
         // TODO add your code here
+        //弹出用水类型页面
         new UserWaterTypeFrom().setVisible(true);
     }
 
     private void UserTipMouseClicked(MouseEvent e) {
         // TODO add your code here
+        //弹出通知页面
         new UserTipForm().setVisible(true);
     }
 
     private void UserCheckPayMouseClicked(MouseEvent e) {
         // TODO add your code here
+        //弹出用户查看当前费用页面
         new UserCheckPayForm().setVisible(true);
     }
 
     private void UserPayForFeeMouseClicked(MouseEvent e) {
         // TODO add your code here
+        //弹出缴费页面
         new UserPayForm().setVisible(true);
     }
 
     private void UserWaterStatisMouseClicked(MouseEvent e) {
         // TODO add your code here
+        //弹出用水情况统计页面
         new UserWaterStatisForm().setVisible(true);
     }
+
+
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -134,8 +140,8 @@ public class UserMainForm extends JFrame {
                     menu11.addMouseListener(new MouseAdapter() {
                         @Override
                         public void mouseClicked(MouseEvent e) {
-                            UserPayMouseClicked(e);
                             UserPayForFeeMouseClicked(e);
+
                         }
                     });
                 }
@@ -165,7 +171,7 @@ public class UserMainForm extends JFrame {
                 menu2.addMouseListener(new MouseAdapter() {
                     @Override
                     public void mouseClicked(MouseEvent e) {
-                        UserPayMouseClicked(e);
+                        UserWaterTpyeMouseClicked(e);
                     }
                 });
             }

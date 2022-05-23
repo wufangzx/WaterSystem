@@ -4,16 +4,16 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :p:33:p, comp label1:::p::p, space ::342:x}}"
-			"$verticalGroup": "par l {seq l {space :p:42:p, comp label1:::p::p, space ::209:x}}"
+			"$horizontalGroup": "par l {seq l {space :p:52:p, comp label1:::p::p, space ::323:x}}"
+			"$verticalGroup": "par l {seq l {space :p:61:p, comp label1:::p::p, space ::190:x}}"
 		} ) {
 			name: "this"
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label1"
-				"text": "客户信息修改"
+				"text": "缴费规则"
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 75, 75 )
+			"location": new java.awt.Point( 0, 0 )
 			"size": new java.awt.Dimension( 400, 300 )
 		} )
 	}
