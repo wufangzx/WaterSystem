@@ -1,0 +1,32 @@
+JFDML JFormDesigner: "7.0.5.1.409" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq {space :p:28:p, comp label1:::p::p, space :::p, comp textField3:::p:189:p}, seq l {space :p:125:p, comp button1:::p::p, space :p:86:p, comp button2:::p::p}}, space ::96:x}}"
+			"$verticalGroup": "par l {seq l {space :p:150:p, par b {comp label1::b:p::p, comp textField3::b:p::p}, space :p:84:p, par b {comp button1::b:p::p, comp button2::b:p::p}, space ::153:x}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField3"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "请输入新的联系方式："
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 7, false )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "确认"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button2"
+				"text": "重置"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 25, 10 )
+			"size": new java.awt.Dimension( 505, 480 )
+		} )
+	}
+}

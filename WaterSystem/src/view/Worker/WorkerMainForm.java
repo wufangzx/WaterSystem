@@ -94,9 +94,9 @@ public class WorkerMainForm extends JFrame {
         textField2 = new JTextField();
         textField3 = new JTextField();
         passwordField1 = new JPasswordField();
-        button1 = new JButton();
-        button2 = new JButton();
-        button3 = new JButton();
+        buttonName = new JButton();
+        buttonPhone = new JButton();
+        buttonAddress = new JButton();
 
         //======== this ========
         setIconImage(null);
@@ -241,16 +241,37 @@ public class WorkerMainForm extends JFrame {
         label5.setFont(label5.getFont().deriveFont(label5.getFont().getSize() + 8f));
 
         //---- button1 ----
-        button1.setText("\u66f4\u65b0");
-        button1.setFont(button1.getFont().deriveFont(button1.getFont().getSize() + 2f));
+        buttonName.setText("\u66f4\u65b0");
+        buttonName.setBackground(Color.white);
+        buttonName.setFont(buttonName.getFont().deriveFont(buttonName.getFont().getSize() + 2f));
+        buttonName.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                NameChange(e);
+            }
+        });
 
         //---- button2 ----
-        button2.setText("\u66f4\u65b0");
-        button2.setFont(button2.getFont().deriveFont(button2.getFont().getSize() + 2f));
+        buttonPhone.setText("\u66f4\u65b0");
+        buttonPhone.setBackground(Color.WHITE);
+        buttonPhone.setFont(buttonPhone.getFont().deriveFont(buttonPhone.getFont().getSize() + 2f));
+        buttonPhone.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+               PhoneChange(e);
+            }
+        });
 
         //---- button3 ----
-        button3.setText("\u66f4\u65b0");
-        button3.setFont(button3.getFont().deriveFont(button3.getFont().getSize() + 2f));
+        buttonAddress.setText("\u66f4\u65b0");
+        buttonAddress.setBackground(Color.white);
+        buttonAddress.setFont(buttonAddress.getFont().deriveFont(buttonAddress.getFont().getSize() + 2f));
+        buttonAddress.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                AddressChang(e);
+            }
+        });
 
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
@@ -261,7 +282,7 @@ public class WorkerMainForm extends JFrame {
                     .addGroup(contentPaneLayout.createParallelGroup()
                         .addComponent(label1)
                         .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                            .addComponent(button2)
+                            .addComponent(buttonPhone)
                             .addGroup(contentPaneLayout.createSequentialGroup()
                                 .addGroup(contentPaneLayout.createParallelGroup()
                                     .addComponent(label5)
@@ -277,10 +298,10 @@ public class WorkerMainForm extends JFrame {
                                 .addGroup(contentPaneLayout.createParallelGroup()
                                     .addGroup(contentPaneLayout.createSequentialGroup()
                                         .addGap(40, 40, 40)
-                                        .addComponent(button1))
+                                        .addComponent(buttonName))
                                     .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
                                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(button3))))))
+                                        .addComponent(buttonAddress))))))
                     .addContainerGap(174, Short.MAX_VALUE))
         );
         contentPaneLayout.setVerticalGroup(
@@ -296,22 +317,34 @@ public class WorkerMainForm extends JFrame {
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(label3)
                         .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(button1))
+                        .addComponent(buttonName))
                     .addGap(44, 44, 44)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(label4)
-                        .addComponent(button2)
+                        .addComponent(buttonPhone)
                         .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(45, 45, 45)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(label5)
-                        .addComponent(button3)
+                        .addComponent(buttonAddress)
                         .addComponent(passwordField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(103, Short.MAX_VALUE))
         );
         pack();
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
+    }
+
+    private void AddressChang(MouseEvent e) {
+        new AddressChange().setVisible(true);
+    }
+
+    private void PhoneChange(MouseEvent e) {
+        new WorkerPhoneChange().setVisible(true);
+    }
+
+    private void NameChange(MouseEvent e) {
+        new WorkerNameChang().setVisible(true);
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
@@ -336,8 +369,8 @@ public class WorkerMainForm extends JFrame {
     private JTextField textField2;
     private JTextField textField3;
     private JPasswordField passwordField1;
-    private JButton button1;
-    private JButton button2;
-    private JButton button3;
+    private JButton buttonName;
+    private JButton buttonPhone;
+    private JButton buttonAddress;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

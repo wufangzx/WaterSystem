@@ -32,8 +32,8 @@ public class Login extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Login frame = new Login();
-                    frame.setVisible(true);
+                    Login login = new Login();
+                    login.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -99,6 +99,7 @@ public class Login extends JFrame {
             if (worker == null) {
                 JOptionPane.showInputDialog(this, "用户名或者密码错误");
                 this.dispose();
+
 
             }
             JOptionPane.showMessageDialog(this, "欢迎【" + selectedItem.getName() + "】：" + worker.getName() + "登录本系统！");
@@ -249,7 +250,7 @@ public class Login extends JFrame {
     private JTextField PassWordTextField;
     private JButton Loginbutton;
     private JButton ResetButton;
-    private JComboBox<String> UserTypeComboBox;
+    public static JComboBox<String> UserTypeComboBox;
     private JLabel label4;
 
     // JFormDesigner - End of variables declaration  //GEN-END:variables

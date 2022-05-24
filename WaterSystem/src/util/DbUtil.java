@@ -2,7 +2,10 @@ package util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
+import static dao.BaseDao.con;
 
 public class DbUtil {
 	private String dbUrl="jdbc:sqlserver://localhost:1433;databaseName=test"; //
@@ -38,15 +41,24 @@ public class DbUtil {
 		}
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		DbUtil dbUtil=new DbUtil();
 		try {
 			dbUtil.getCon();
-			System.out.println("连接成功");
+			System.out.println("1");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.out.println("连接失败");
+			System.out.println("0");
 		}
+//
+//		String Sql = "update user1 set password=3 where name=4";
+//		PreparedStatement pst = con.prepareStatement(Sql);
+//		int rst=pst.executeUpdate();
+//		if(rst>0)
+//		{
+//			System.out.println("2");
+//
+//		}
 	}
 }

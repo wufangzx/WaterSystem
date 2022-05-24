@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :p:107:p, par t {par l {seq t {comp label5:::p::p, space :p:36:p, comp textField2:::p:245:p}, seq l {par l {comp label4:::p::p, comp label6:::p::p}, space :p:35:p, par t {comp passwordField2:::p:245:p, comp textField1:::p:245:p}}}, seq {par t {comp label2:::p::p, comp label3:::p::p}, space :p:36:p, par t {comp textField4:::p:245:p, comp textField3:::p:245:p}}}, space :p:66:p, par l {comp button1:::p::p, comp button2:::p::p}, space ::59:x}}"
-			"$verticalGroup": "par l {seq l {space ::125:x, par b {comp label2::b:p::p, comp textField4::b:p::p}, space :p:53:p, par b {comp label3::b:p::p, comp textField3::b:p::p}, space :p:47:p, par b {comp label5::b:p::p, comp textField2::b:p::p}, space :p:49:p, par b {comp label4::b:p::p, comp textField1::b:p::p, comp button1::b:p::p}, space :p:38:p, par b {comp passwordField2::b:p::p, comp label6::b:p::p, comp button2::b:p::p}, space :p:61:p}}"
+			"$horizontalGroup": "par l {seq l {space :p:107:p, par t {par l {seq t {comp label5:::p::p, space :p:36:p, comp textField2:::p:245:p}, seq l {par l {comp label4:::p::p, comp label6:::p::p}, space :p:35:p, par t {comp passwordField2:::p:245:p, comp textField1:::p:245:p}}}, seq {par t {comp label2:::p::p, comp label3:::p::p}, space :p:36:p, par t {comp textField4:::p:245:p, comp textField3:::p:245:p}}}, space :p:66:p, par l {comp button1:::p::p, comp button2:::p::p}, space ::34:x}}"
+			"$verticalGroup": "par l {seq l {space ::100:x, par b {comp label2::b:p::p, comp textField4::b:p::p}, space :p:53:p, par b {comp label3::b:p::p, comp textField3::b:p::p}, space :p:47:p, par b {comp label5::b:p::p, comp textField2::b:p::p}, space :p:49:p, par b {comp label4::b:p::p, comp textField1::b:p::p, comp button1::b:p::p}, space :p:38:p, par b {comp passwordField2::b:p::p, comp label6::b:p::p, comp button2::b:p::p}, space :p:61:p}}"
 		} ) {
 			name: "this"
 			"iconImage": sfield com.jformdesigner.model.FormObject NULL_VALUE
@@ -51,11 +51,13 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button1"
-				"text": "更新"
+				"text": "修改"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "PhoneNumbeiChangeMouseClicked", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button2"
-				"text": "更新"
+				"text": "修改"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button2MouseClicked", true ) )
 			} )
 			menuBar: new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
 				name: "menuBar1"
@@ -100,6 +102,7 @@ new FormModel {
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/images/收费规则.png" )
 					"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 1, false )
 					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "UserPayMouseClicked", true ) )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "menu2MouseClicked", true ) )
 				} )
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
 					name: "menu6"
@@ -132,7 +135,7 @@ new FormModel {
 			}
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 15 )
-			"size": new java.awt.Dimension( 695, 600 )
+			"size": new java.awt.Dimension( 670, 575 )
 		} )
 	}
 }

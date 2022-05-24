@@ -6,6 +6,8 @@ package view.User;
 
 import java.awt.*;
 import java.awt.event.*;
+
+import model.User;
 import model.UserType;
 import view.User.*;
 
@@ -16,8 +18,8 @@ import javax.swing.GroupLayout;
  * @author zengxing
  */
 public class UserMainForm extends JFrame {
-    private UserType userType;
-    private Object userobject;
+    public static UserType userType;
+    public static Object userobject;
     public UserMainForm(UserType userType,Object userobject) {
         this.userType=userType;
         this.userobject=userobject;
@@ -66,6 +68,37 @@ public class UserMainForm extends JFrame {
         // TODO add your code here
         //弹出用水情况统计页面
         new UserWaterStatisForm().setVisible(true);
+    }
+
+
+
+
+    private void PhoneNumbeiChangeMouseClicked(MouseEvent e) {
+        // TODO add your code here
+        new UserPhoneNumberChangeForm().setVisible(true);
+    }
+
+    private void button2MouseClicked(MouseEvent e) {
+        // TODO add your code here
+        new UserPasswordChangeForm(userType,userobject).setVisible(true);
+        User use1 = (User)UserMainForm.userobject;
+        UserPasswordChangeForm.currentUserLabel.setText("【用户】" + use1.getName());
+    }
+
+
+
+
+    private void menu2MouseClicked(MouseEvent e) {
+        // TODO add your code here
+        new UserPayRegularForm().setVisible(true);
+    }
+
+    private void UserPayMouseClicked(MouseEvent e) {
+        // TODO add your code here
+    }
+
+    private void GotoPayMouseClicked(MouseEvent e) {
+        // TODO add your code here
     }
 
 
@@ -140,8 +173,9 @@ public class UserMainForm extends JFrame {
                     menu11.addMouseListener(new MouseAdapter() {
                         @Override
                         public void mouseClicked(MouseEvent e) {
+                            UserPayMouseClicked(e);
                             UserPayForFeeMouseClicked(e);
-
+                            GotoPayMouseClicked(e);
                         }
                     });
                 }
@@ -171,7 +205,8 @@ public class UserMainForm extends JFrame {
                 menu2.addMouseListener(new MouseAdapter() {
                     @Override
                     public void mouseClicked(MouseEvent e) {
-                        UserWaterTpyeMouseClicked(e);
+                        UserPayMouseClicked(e);
+                        menu2MouseClicked(e);
                     }
                 });
             }
@@ -256,10 +291,22 @@ public class UserMainForm extends JFrame {
         label6.setFont(label6.getFont().deriveFont(label6.getFont().getSize() + 8f));
 
         //---- button1 ----
-        button1.setText("\u66f4\u65b0");
+        button1.setText("\u4fee\u6539");
+        button1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                PhoneNumbeiChangeMouseClicked(e);
+            }
+        });
 
         //---- button2 ----
-        button2.setText("\u66f4\u65b0");
+        button2.setText("\u4fee\u6539");
+        button2.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                button2MouseClicked(e);
+            }
+        });
 
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
@@ -293,12 +340,12 @@ public class UserMainForm extends JFrame {
                     .addGroup(contentPaneLayout.createParallelGroup()
                         .addComponent(button1)
                         .addComponent(button2))
-                    .addContainerGap(59, Short.MAX_VALUE))
+                    .addContainerGap(34, Short.MAX_VALUE))
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
                 .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addContainerGap(125, Short.MAX_VALUE)
+                    .addContainerGap(100, Short.MAX_VALUE)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(label2)
                         .addComponent(textField4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
